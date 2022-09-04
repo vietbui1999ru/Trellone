@@ -1,12 +1,11 @@
-package com.projemanag
+package com.projemanag.activities
 
 import android.content.Intent
-import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
 import android.view.WindowManager
-import kotlinx.android.synthetic.main.activity_splash.*
+import com.projemanag.R
+import kotlinx.android.synthetic.main.activity_intro.*
 
 class IntroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,5 +16,15 @@ class IntroActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         // END
+
+        btn_sign_in_intro.setOnClickListener {
+            startActivity(Intent(this, SignInActivity::class.java))
+        }
+
+        btn_sign_up_intro.setOnClickListener {
+
+            startActivity(Intent(this, SignUpActivity::class.java))
+
+        }
     }
 }

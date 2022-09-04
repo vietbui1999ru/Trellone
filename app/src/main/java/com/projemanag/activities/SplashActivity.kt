@@ -1,16 +1,18 @@
-package com.projemanag
+package com.projemanag.activities
 
 import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.WindowManager
+import com.projemanag.R
 import kotlinx.android.synthetic.main.activity_splash.*
 
 // TODO (Step 1: Add new activity named as splash activity.)
 // START
-const val delayToMain : Long = 2500
+const val delayToMain : Long = 1000
 class SplashActivity : AppCompatActivity() {
 
     /**
@@ -36,8 +38,8 @@ class SplashActivity : AppCompatActivity() {
             Typeface.createFromAsset(assets, "Cookie-Regular.ttf")
         tv_app_name.typeface = typeface
 
-        Handler().postDelayed({
-            startActivity(Intent(this, IntroActivity::class.java))
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
         }, delayToMain)
     }
 }
