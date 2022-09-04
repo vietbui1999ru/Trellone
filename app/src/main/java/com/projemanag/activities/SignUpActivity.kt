@@ -12,6 +12,8 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.projemanag.R
+import com.projemanag.firebase.FirestoreClass
+import com.projemanag.modules.User
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import org.w3c.dom.Text
 
@@ -31,6 +33,13 @@ class SignUpActivity : BaseActivity() {
         }
 
         setupActionBar()
+    }
+
+    fun userRegisteredSuccess(){
+        Toast.makeText(this, "You have successfully registered", Toast.LENGTH_SHORT).show()
+        hideProgressDialog()
+        FirebaseAuth.getInstance().signOut()
+        finish()
     }
 
     private fun setupActionBar() {
@@ -68,14 +77,10 @@ class SignUpActivity : BaseActivity() {
                 .addOnCompleteListener(this) { task ->
                     //debug authentication
 
-                    hideProgressDialog()
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
-                        Log.d("Firebase", "createUserWithEmail:success")
-                        val user = auth.currentUser
-                        //sign out
-                        auth.signOut()
-                        finish()
+                        val user = User(auth.currentUser!!.uid, name, email)
+                        FirestoreClass().registerUser(this, user)
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w("Firebase", "createUserWithEmail:failure", task.exception)

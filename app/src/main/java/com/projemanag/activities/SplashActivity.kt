@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowManager
 import com.projemanag.R
+import com.projemanag.firebase.FirestoreClass
 import kotlinx.android.synthetic.main.activity_splash.*
 
 // TODO (Step 1: Add new activity named as splash activity.)
@@ -39,7 +40,17 @@ class SplashActivity : AppCompatActivity() {
         tv_app_name.typeface = typeface
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
+            //get current Id
+            val currentUserId = FirestoreClass().getCurrentUserID()
+            if (currentUserId.isNotEmpty()) {
+                // START
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+                // END
+            } else {
+                // START
+                startActivity(Intent(this@SplashActivity, IntroActivity::class.java))
+                // END
+            }
         }, delayToMain)
     }
 }
