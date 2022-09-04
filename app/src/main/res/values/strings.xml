@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Trellone</string>
+
+    <string name="image_contentDescription">image</string>
+    <string name="lets_get_started_text">let\'s Get Started</string>
+    <string name="intro_text_description">Collaborate and Plan Together</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="sign_up">SIGN UP</string>
+</resources>
