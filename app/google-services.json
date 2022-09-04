@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "137211375798",
+    "project_id": "trellone-50ea5",
+    "storage_bucket": "trellone-50ea5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137211375798:android:5e274ff4e01c198d52f617",
+        "android_client_info": {
+          "package_name": "com.projemanag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137211375798-sj76d1ap9csu0f7f24l578peioh5nmih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.projemanag",
+            "certificate_hash": "b3fe31e8813b4a4d6ca27225871cec3cb62c44f4"
+          }
+        },
+        {
+          "client_id": "137211375798-226ng4idtf50flqgk6fi9naeapqlsm8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSlS-bAQBq-2aMLnzQLZPtZpzuCIRWngw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137211375798-226ng4idtf50flqgk6fi9naeapqlsm8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
