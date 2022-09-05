@@ -1,5 +1,6 @@
 package com.projemanag.firebase
 
+import android.app.Activity
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
@@ -29,15 +30,30 @@ class FirestoreClass {
             }
     }
 
-    fun signInUser(activity: SignInActivity, userInfo: User) {
+    fun signInUser(activity: Activity) {
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserID())
             .get()
             .addOnSuccessListener { document ->
                 val loggedInUser = document.toObject(User::class.java)
-                activity.signInSuccess(loggedInUser!!)
+                when(activity) {
+                    is SignInActivity -> {
+                        activity.signInSuccess(loggedInUser!!)
+                    }
+                    is MainActivity -> {
+                        activity.updateNavigationUserDetails(loggedInUser!! )
+                    }
+                }
             }
-            .addOnFailureListener { e ->
+            .addOnFailureListener { e->
+                when(activity) {
+                    is SignInActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                    is MainActivity -> {
+                        activity.hideProgressDialog()
+                    }
+                }
                 Log.e(activity.javaClass.simpleName, "Error while signing in the user.", e)
             }
     }
