@@ -42,7 +42,7 @@
                 android:padding="@dimen/card_view_layout_content_padding">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_board_image"
+                    android:id="@+id/iv_item_board_image"
                     android:layout_width="@dimen/board_image_size"
                     android:layout_height="@dimen/board_image_size"
                     android:contentDescription="@string/image_contentDescription"

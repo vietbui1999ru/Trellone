@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -18,7 +17,6 @@ import com.projemanag.firebase.FirestoreClass
 import com.projemanag.modules.Board
 import com.projemanag.utils.Constants
 import kotlinx.android.synthetic.main.activity_create_board.*
-import kotlinx.android.synthetic.main.activity_my_profile.*
 import java.io.IOException
 
 class CreateBoardActivity : BaseActivity() {
@@ -38,7 +36,7 @@ class CreateBoardActivity : BaseActivity() {
             mUserName = intent.getStringExtra(Constants.NAME)!!
         }
 
-        iv_board_image.setOnClickListener {
+        iv_item_board_image.setOnClickListener {
             if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 == PackageManager.PERMISSION_GRANTED) {
                 Constants.showImageChooser(this)
@@ -120,6 +118,7 @@ class CreateBoardActivity : BaseActivity() {
 
     fun boardCreatedSuccessfully(){
         hideProgressDialog()
+        setResult(Activity.RESULT_OK)
         finish()
     }
 
@@ -170,7 +169,7 @@ class CreateBoardActivity : BaseActivity() {
                     .load(Uri.parse(mSelectedImageFileUri.toString()))
                     .centerCrop()
                     .placeholder(R.drawable.burger)
-                    .into(iv_board_image)
+                    .into(iv_item_board_image)
             } catch (e: IOException) {
                 e.printStackTrace()
             }

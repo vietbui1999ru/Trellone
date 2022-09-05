@@ -8,4 +8,6 @@
     <color name="secondary_text_color">#252323</color>
     <color name="snackbar_error_color">#F72400</color>
 
+    <color name="divider_color">#F5F5F5</color>
+
 </resources>
