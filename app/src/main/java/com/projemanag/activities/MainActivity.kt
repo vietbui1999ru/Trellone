@@ -1,8 +1,10 @@
 package com.projemanag.activities
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.GravityCompat
@@ -18,6 +20,12 @@ import kotlinx.android.synthetic.main.nav_header_main.*
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    companion object {
+
+        const val MY_PROFILE_REQUEST_CODE: Int = 11
+        const val CREATE_BOARD_REQUEST_CODE: Int = 12
+
+    }
     /**
      * This function is auto created by Android when the Activity Class is created.
      */
@@ -31,7 +39,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        FirestoreClass().signInUser(this)
+        FirestoreClass().loadUserData(this)
     }
 
     private fun setUpActionBar(){
@@ -60,7 +68,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         when(item.itemId){
             R.id.nav_my_profile -> {
-                Toast.makeText(this, "My Profile", Toast.LENGTH_SHORT).show()
+                startActivityForResult(Intent(this, MyProfileActivity::class.java), MY_PROFILE_REQUEST_CODE)
                 // START
                 // END
             }
@@ -92,6 +100,20 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         tv_username.text = user.name
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == MY_PROFILE_REQUEST_CODE) {
+                FirestoreClass().loadUserData(this)
+            } else if (requestCode == CREATE_BOARD_REQUEST_CODE) {
+                //implement later
+
+            }
+        } else {
+            Log.e("Cancelled", "Cancelled")
+        }
     }
 
 }

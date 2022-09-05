@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.projemanag.activities.MainActivity
+import com.projemanag.activities.MyProfileActivity
 import com.projemanag.activities.SignInActivity
 import com.projemanag.activities.SignUpActivity
 import com.projemanag.modules.User
@@ -30,7 +31,24 @@ class FirestoreClass {
             }
     }
 
-    fun signInUser(activity: Activity) {
+    fun updateUserProfileData(activity: MyProfileActivity, userHashMap: HashMap<String, Any>) {
+
+        mFireStore.collection(Constants.USERS)
+            .document(getCurrentUserID())
+            .update(userHashMap)
+            .addOnSuccessListener {
+                Log.i(activity.javaClass.simpleName, "Profile Data updated successfully!")
+                Toast.makeText(activity, "Profile Data updated successfully!", Toast.LENGTH_SHORT).show()
+                activity.profileUpdateSuccess()
+            }
+            .addOnFailureListener { e ->
+                activity.hideProgressDialog()
+                Log.e(activity.javaClass.simpleName, "Error while creating a board.", e)
+            }
+
+    }
+
+    fun loadUserData(activity: Activity) {
         mFireStore.collection(Constants.USERS)
             .document(getCurrentUserID())
             .get()
@@ -42,6 +60,9 @@ class FirestoreClass {
                     }
                     is MainActivity -> {
                         activity.updateNavigationUserDetails(loggedInUser!! )
+                    }
+                    is MyProfileActivity -> {
+                        activity.setUserDataInUI(loggedInUser!!)
                     }
                 }
             }

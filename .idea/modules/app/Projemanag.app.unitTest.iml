@@ -24,6 +24,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/0ce87624b98fc5d9bf71f88fd7f1f830/transformed/jetified-kotlin-stdlib-jdk8-1.5.30.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7d36cc790d001a84e89c7b63788ae550/transformed/jetified-kotlin-stdlib-jdk7-1.7.10.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d7e5057bc14837e024d4c7ea4b145c45/transformed/jetified-core-ktx-1.2.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/625e8a1e5ac5cccba08f8e52196447af/transformed/jetified-firebase-storage-ktx-20.0.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/099be0a49c854a52aef30e517a80e45c/transformed/jetified-firebase-common-ktx-20.1.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/360c1143fbf98f09daf501309d315e76/transformed/jetified-kotlin-stdlib-1.7.10.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e3a29b05b37ba049dad135f66290e900/transformed/jetified-kotlin-stdlib-common-1.7.10.jar</arg>
@@ -32,6 +33,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/5d0a67e9f2b7b24bcf22c352d3f7d5ec/transformed/constraintlayout-2.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/529ce6fdab0a5749a52ef24f0c690b37/transformed/appcompat-1.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d931f6bca2d4dba0e2d4112c52fb2bf6/transformed/jetified-firebase-firestore-24.3.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/33785b250a0c68f84cf2e87ad172ec70/transformed/jetified-firebase-storage-20.0.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/711152c9a563c31fcded65192b3a946f/transformed/jetified-firebase-auth-21.0.8-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d271b27e1ff8ef3033ce009677f1ce87/transformed/jetified-glide-4.12.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/2bd2590ff19ca787798b3c74c0659389/transformed/jetified-viewpager2-1.0.0-api.jar</arg>
@@ -84,9 +86,9 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/5071f9ebc61e34aab71d59cd12d55217/transformed/jetified-annotation-experimental-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/4e59c034d1e3645ee51bdf5763d6b35c/transformed/jetified-grpc-stub-1.44.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7da29e730f843f849d748b4013d5b52f/transformed/jetified-guava-30.1.1-android.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/bdef3a03e04de03cfb66543234eed288/transformed/jetified-listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/c8a9e3521d2ffd23b16a61d765e9c372/transformed/jetified-firebase-annotations-16.1.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/6aa3ae5708cf25183f44fa800646e30f/transformed/jetified-error_prone_annotations-2.9.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/c8a9e3521d2ffd23b16a61d765e9c372/transformed/jetified-firebase-annotations-16.1.0.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/bdef3a03e04de03cfb66543234eed288/transformed/jetified-listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/085af89ac9428632385367f910b17045/transformed/jetified-protolite-well-known-types-18.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/595de33ff95263422c3300af5ddccb16/transformed/jetified-grpc-protobuf-lite-1.44.1.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/daaf003e4b460eeba4436f27dbce4dd1/transformed/jetified-protobuf-javalite-3.19.2.jar</arg>
@@ -190,9 +192,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.constraintlayout:constraintlayout-solver:2.0.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.grpc:grpc-stub:1.44.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:guava:30.1.1-android" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
-    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-annotations:16.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.errorprone:error_prone_annotations:2.9.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-annotations:16.1.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.grpc:grpc-protobuf-lite:1.44.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.protobuf:protobuf-javalite:3.19.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.grpc:grpc-okhttp:1.44.1" level="project" />
@@ -210,11 +212,13 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth-ktx:21.0.8@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-firestore-ktx:24.3.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.core:core-ktx:1.2.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage-ktx:20.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-common-ktx:20.1.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.android.material:material:1.4.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.constraintlayout:constraintlayout:2.0.1@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.appcompat:appcompat:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-firestore:24.3.0@aar" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-storage:20.0.2@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.firebase:firebase-auth:21.0.8@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.github.bumptech.glide:glide:4.12.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.viewpager2:viewpager2:1.0.0@aar" level="project" />
